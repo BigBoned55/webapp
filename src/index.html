@@ -5,13 +5,172 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+  <title>Dashboard - Vanilla JavaScript App</title>
 </head>
 
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
+  <header class="header">
+    <div class="header-content">
+      <h1 class="header-title">Dashboard</h1>
+      <div class="header-info">
+        <span id="current-time"></span>
+        <span class="user-info">Welcome, User</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <!-- Metrics Section -->
+    <section class="metrics-section">
+      <div class="metric-card">
+        <div class="metric-icon">📊</div>
+        <div class="metric-content">
+          <h3 class="metric-value" id="metric-users">2,453</h3>
+          <p class="metric-label">Total Users</p>
+          <span class="metric-change positive">↑ 12.5%</span>
+        </div>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-icon">💰</div>
+        <div class="metric-content">
+          <h3 class="metric-value" id="metric-revenue">$45,231</h3>
+          <p class="metric-label">Revenue</p>
+          <span class="metric-change positive">↑ 8.2%</span>
+        </div>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-icon">📦</div>
+        <div class="metric-content">
+          <h3 class="metric-value" id="metric-orders">1,294</h3>
+          <p class="metric-label">Orders</p>
+          <span class="metric-change negative">↓ 3.1%</span>
+        </div>
+      </div>
+      
+      <div class="metric-card">
+        <div class="metric-icon">⭐</div>
+        <div class="metric-content">
+          <h3 class="metric-value" id="metric-rating">4.8</h3>
+          <p class="metric-label">Avg Rating</p>
+          <span class="metric-change positive">↑ 0.3</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="charts-section">
+      <div class="chart-card">
+        <h2 class="card-title">Weekly Activity</h2>
+        <div class="chart-container">
+          <div class="bar-chart" id="weekly-chart">
+            <div class="bar" style="--height: 65%"><span>Mon</span></div>
+            <div class="bar" style="--height: 78%"><span>Tue</span></div>
+            <div class="bar" style="--height: 54%"><span>Wed</span></div>
+            <div class="bar" style="--height: 89%"><span>Thu</span></div>
+            <div class="bar" style="--height: 72%"><span>Fri</span></div>
+            <div class="bar" style="--height: 45%"><span>Sat</span></div>
+            <div class="bar" style="--height: 38%"><span>Sun</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h2 class="card-title">Performance Metrics</h2>
+        <div class="progress-list">
+          <div class="progress-item">
+            <div class="progress-header">
+              <span>Conversion Rate</span>
+              <span class="progress-value">68%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 68%"></div>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header">
+              <span>Customer Satisfaction</span>
+              <span class="progress-value">92%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 92%"></div>
+            </div>
+          </div>
+          <div class="progress-item">
+            <div class="progress-header">
+              <span>Goal Completion</span>
+              <span class="progress-value">75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Activity Section -->
+    <section class="activity-section">
+      <div class="activity-card">
+        <h2 class="card-title">Recent Activity</h2>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon">👤</div>
+            <div class="activity-content">
+              <p class="activity-text"><strong>New user registered:</strong> john.doe@example.com</p>
+              <span class="activity-time">5 minutes ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">🛒</div>
+            <div class="activity-content">
+              <p class="activity-text"><strong>Order placed:</strong> Order #12847</p>
+              <span class="activity-time">12 minutes ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">💳</div>
+            <div class="activity-content">
+              <p class="activity-text"><strong>Payment received:</strong> $299.99</p>
+              <span class="activity-time">1 hour ago</span>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">📝</div>
+            <div class="activity-content">
+              <p class="activity-text"><strong>New review posted:</strong> 5-star rating</p>
+              <span class="activity-time">2 hours ago</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="quick-actions-card">
+        <h2 class="card-title">Quick Actions</h2>
+        <div class="actions-grid">
+          <button class="action-button">
+            <span class="action-icon">➕</span>
+            <span class="action-label">Add User</span>
+          </button>
+          <button class="action-button">
+            <span class="action-icon">📧</span>
+            <span class="action-label">Send Email</span>
+          </button>
+          <button class="action-button">
+            <span class="action-icon">📊</span>
+            <span class="action-label">View Reports</span>
+          </button>
+          <button class="action-button">
+            <span class="action-icon">⚙️</span>
+            <span class="action-label">Settings</span>
+          </button>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <script src="dashboard.js"></script>
 </body>
 
 </html>
